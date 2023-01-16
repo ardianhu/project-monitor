@@ -89,10 +89,14 @@ function progress() {
                         <td>
                             <form action="{{ route('projects.destroy',$project->id) }}" method="Post">
                                 <div class="flex space-x-3">
-                                <a class="btn btn-primary" href="{{ route('projects.edit',$project->id) }}">Edit</a>
+                                <a class="btn btn-primary" href="{{ route('projects.edit',$project->id) }}">
+                                    <img src="{{ asset('edit.svg') }}" alt="" class="w-10 h-10 p-2 bg-green-600 rounded-md">
+                                </a>
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger">
+                                    <img src="{{ asset('delete.svg') }}" alt="" class="w-10 h-10 p-2 bg-red-600 rounded-md"
+                                </button>
                                 </div>
                             </form>
                         </td>
